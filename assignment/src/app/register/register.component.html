@@ -1,0 +1,30 @@
+<!-- <div class="register-container">
+  <h2>Register</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+    <label for="username">Username:</label>
+    <input id="username" formControlName="username" type="text" />
+
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div> -->
+
+
+<div>
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input id="username" formControlName="username" placeholder="Username" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" formControlName="password" type="password" placeholder="Password" required>
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+  <p [ngClass]="{'success': message.includes('success'), 'error': !message.includes('success')}">{{ message }}</p>
+  <p>Already have an account? <a [routerLink]="['/login']">Login here</a></p>
+</div>

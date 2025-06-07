@@ -1,0 +1,13 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <input formControlName="filenumber" placeholder="File Number" type="number" required>
+    <input formControlName="firstName" placeholder="First Name" required>
+    <input formControlName="lastName" placeholder="Last Name" required>
+    <input formControlName="gender" placeholder="Gender" required>
+    <input formControlName="dateOfBirth" placeholder="Date of Birth (YYYY-MM-DD)" required>
+    <input formControlName="address1" placeholder="Address 1" required>
+    <input formControlName="address2" placeholder="Address 2">
+    <input formControlName="phoneNumber1" placeholder="Phone Number 1" required>
+    <input formControlName="phoneNumber2" placeholder="Phone Number 2">
+    <button type="submit" [disabled]="employeeForm.invalid">Submit</button>
+    <p *ngIf="error">{{ error }}</p>
+</form>

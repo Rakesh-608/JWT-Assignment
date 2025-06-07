@@ -1,0 +1,13 @@
+spring:
+  spring:
+    data:
+      mongodb:
+        uri: mongodb://localhost:27017/assignment
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+jwt:
+  secret: your-256-bit-secret-key-replace-this-with-a-secure-key
+  expiration: 86400000 # 1 day in milliseconds
